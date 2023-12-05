@@ -29,10 +29,11 @@ Constraints:
 Only one valid answer exists.*/
 
 void main() {
-  twoSum([1, 2, 3, 4, 5], 9);
+  final value = _twoSum([1, 2, 3, 4, 5], 9);
+  print('Two numnber are $value');
 }
 
-List<int>? twoSum(List<num> givenNums, int target) {
+List<int>? _twoSum(List<num> givenNums, int target) {
   Map<int, int> seenNumber = {};
   for (var i = 0; i < givenNums.length; i++) {
     final findingNumber = target - givenNums[i];
@@ -41,5 +42,5 @@ List<int>? twoSum(List<num> givenNums, int target) {
     }
     seenNumber[givenNums[i].toInt()] = i;
   }
-  return  null;
+  return null;
 }
