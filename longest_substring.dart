@@ -32,7 +32,12 @@ s consists of English letters, digits, symbols and spaces.
 
 void main() {
   String input = "abacef ba";
-  lengthOfLongestSubstring(input);
+  // lengthOfLongestSubstring(input);
+  var test = [1, 2, 3, 3, 5, 6, 3, 2, 1];
+  final value = Map.fromIterable(test);
+  print(value);
+  final duplicatedList = test.expand((element) => [element, element].toList());
+  print(duplicatedList);
 }
 
 int lengthOfLongestSubstring(String s) {
@@ -42,15 +47,13 @@ int lengthOfLongestSubstring(String s) {
   String ans = "";
 
   while (end < s.length) {
-    print('Value of end $end');
     String current = s[end];
 
     if (seen.containsKey(current) && seen[current]! >= begin) {
-      print('Under contains ${seen.toString()}');
       begin = seen[current]! + 1;
     } else {
       seen[current] = end;
-      print(seen.toString());
+
       end++;
     }
 
